@@ -1,0 +1,7 @@
+include ':mine'
+include ':main'
+include ':login'
+include ':dataroom'
+include ':core'
+include ':app'
+rootProject.name = "KTXArmsDemo"

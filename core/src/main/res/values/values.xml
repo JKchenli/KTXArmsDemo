@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleLayout">
+        <attr name="title_titleText" format="string|reference" />
+        <attr name="title_titleIcon" format="reference" />
+        <!--        <attr name="lock_touchColor" format="color|reference" />-->
+        <!--        <attr name="lock_errorColor" format="color|reference" />-->
+        <!--        <attr name="lock_fillColor" format="color|reference" />-->
+        <!--        <attr name="lock_rowNum" format="integer|reference" />-->
+        <!--        <attr name="lock_columnNum" format="integer|reference" />-->
+        <!--        <attr name="lock_minTouchNum" format="integer|reference" />-->
+        <!--        <attr name="lock_maxErrorNum" format="integer|reference" />-->
+        <!--        <attr name="lock_lineWidth" format="dimension|reference" />-->
+        <!--        <attr name="lock_lockView" format="string" />-->
+        <!--        <attr name="lock_linkView" format="string" />-->
+        <!--        <attr name="lock_helper" format="string" />-->
+        <!--        <attr name="lock_statusStayDuration" format="integer|reference" />-->
+        <!--        <attr name="lock_enableFeedback" format="boolean|reference" />-->
+    </declare-styleable>
+
+
+    <style name="TitleLayoutDefault">
+        <item name="title_titleText">文字标题</item>
+    </style>
+</resources>
