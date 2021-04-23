@@ -1,24 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
-
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
-    kapt {
-        arguments { arg("AROUTER_MODULE_NAME", project.getName()) }
-    }
-    buildFeatures {
-        viewBinding = true
-    }
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
     defaultConfig {
-        applicationId "com.cl.ktxarmsdemo"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.cl.parking"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,10 +32,5 @@ android {
 }
 
 dependencies {
-    implementation project(':main')
-    implementation project(':mine')
-    implementation project(":core")
-    implementation project(":dataroom")
-    kapt "com.alibaba:arouter-compiler:$arouter_version"
-    kapt 'androidx.room:room-compiler:2.2.0'
+    implementation project(":login")
 }

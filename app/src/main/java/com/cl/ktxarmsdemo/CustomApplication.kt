@@ -8,8 +8,8 @@ import com.cl.core.base.BaseApplication
  * @Description
  */
 class CustomApplication : BaseApplication() {
-    
-    override fun init() {
+
+    override fun initApp() {
 
     }
 }

@@ -1,0 +1,48 @@
+if (isRelease) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+    kapt {
+        arguments { arg("AROUTER_MODULE_NAME", project.getName()) }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+    }
+    sourceSets {
+        main{
+            if (isRelease) {
+                manifest.srcFile "${projectDir}/src/main/AndroidManifest.xml"
+            } else {
+                manifest.srcFile "${projectDir}/src/main/debug/AndroidManifest.xml"
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    api project(':core')
+}

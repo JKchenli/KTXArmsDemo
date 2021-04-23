@@ -1,19 +1,21 @@
 package com.cl.core.base
 
 import android.app.Application
+import com.alibaba.android.arouter.launcher.ARouter
 
 /**
  * @author Chenli
  * @Date 2021/3/29
  * @Description
  */
-abstract class BaseApplication : Application() {
+open class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        init()
+        ARouter.init(this)
+        initApp()
     }
 
-    abstract fun init()
-
+    open fun initApp() {
+    }
 }

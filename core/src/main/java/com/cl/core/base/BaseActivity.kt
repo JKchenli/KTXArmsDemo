@@ -2,9 +2,7 @@ package com.cl.core.base
 
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.renderscript.ScriptGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewbinding.ViewBinding
 import com.alibaba.android.arouter.launcher.ARouter
 
 /**
@@ -13,10 +11,11 @@ import com.alibaba.android.arouter.launcher.ARouter
  * @Description
  */
 abstract class BaseActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         ARouter.getInstance().inject(this)
+        initUI()
     }
 
+    abstract fun initUI()
 }
